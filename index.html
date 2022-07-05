@@ -10,25 +10,28 @@
 </head>
 <body>
 <div class="root">
-    <table class="tables">
-        <thead>
+    <form id="formulaire">
+        <table>
             <tr>
-                <th>Identifiant</th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Email</th>
-                <th>Age</th>
+                <td><label for="lastname">lastname: </label></td>
+                <td><input type="text" id="lastname" placeholder="Enter your lastname here"></td>
             </tr>
-            
-        </thead>
-        <tbody class="body">
+            <tr>
+                <td><label for="firstname">firstname: </label></td>
+                <td><input type="text" id="firstname"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email: </label></td>
+                <td><input type="email" id="email"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="bouton" id="bouton"></td>
+            </tr>
+        </table>
 
-        </tbody>   
-    </table>
-</div>
-<div>
-    <button class="ajouter">ajouter</button>
-    <button class="effacer">effacer</button>
+        
+    </form>
+    
 </div>
     
 </body>
