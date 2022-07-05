@@ -1,21 +1,78 @@
-
-/*const nombres = [2,4,6,6,8,9];
-
-// utilisation du méthode reduce de js
-const somme = nombres.reduce((som,nombre)=>{
-    // console.log(som+nombre);   
-    return som += nombre;
-},0)
-console.log(somme);*/
-// const fruits = [ 'mangue','pomme', 'goyave','citron','fraise','banane']
-// const tab = new Array();
-// const fruitsAupluriel = fruits.reduce((signe,fruit)=>{
-//     return fruit + 'signe'
-// },'s')
-// console.log(fruitsAupluriel)
-const nombres = [21,33,60,98,4,9]
-const trie = nombres.sort((a,b)=>{
-    console.log(a-b)
-    return a-b;
+const root = document.querySelector('#root');
+// const button = document.querySelector('button');
+const users = [
+    {
+        id:1,
+        nom:'Randriamanantena',
+        prenom:'Manitra Luc',
+        email:'randiluc@gmail.com',
+        age:23
+    },
+    {
+        id:2,
+        nom:'Randriamanantena',
+        prenom:'Miary',
+        email:'miaryrandi@gmail.com',
+        age:18
+    },
+    {
+        id:3,
+        nom:'Randriamanantena',
+        prenom:'Manoa',
+        email:'Manoa@gmail.com',
+        age:6
+    },
+    {
+        id:4,
+        nom:'Rakotondravelo',
+        prenom:'Mija',
+        email:'Mija@gmail.com',
+        age:23
+    },
+]
+const corps = document.querySelector('.body')
+// console.log(document.querySelector('.body').style.display)
+let htmlString=users.reduce((stockpile,user)=>{
+    stockpile += creeLigne(user);
+    return stockpile
+},'');
+console.log(htmlString)
+document.querySelector('.ajouter').addEventListener('click',()=>{
+    document.querySelector('.body').innerHTML = htmlString;
 })
-console.log(trie);
+// document.querySelector('.ajouter').addEventListener('click',()=>{
+//     if(document.querySelector('.body').style.display == ''){
+//         for(let user of users){
+//             htmlString += creeLigne(user)
+//         }
+//         corps.innerHTML = htmlString;
+//     }
+    
+//     else{
+        
+//         if(document.querySelector('.body').style.display == 'none'){
+//             document.querySelector('.body').style.display = 'block'
+//         }
+//     }
+
+// })
+
+// utilisation de la fonction reduce
+// document.querySelector(".ajouter").addEventListener('click',()=>{
+//     users
+// })
+
+// document.querySelector('.effacer').addEventListener('click',()=>{
+//     document.querySelector('.body').style.display = "none"
+// })
+function creeLigne({id,nom,prenom,email,age}){
+    return (
+        `<tr>
+            <td>${id}</td>
+            <td>${nom}</td>
+            <td>${prenom}</td>
+            <td>${email}</td>
+            <td>${age}</td>
+        </tr>`
+    )
+}
