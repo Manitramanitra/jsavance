@@ -3,7 +3,13 @@ const firstname = document.querySelector('#firstname')
 const email = document.querySelector('#email')
 const bouton = document.querySelector('#formulaire')
 
-function user(nom,prenom,Email,id=Math.floor(Math.random()*new Date()))
+function user(
+    {
+        nom,
+        prenom,
+        Email,
+        id=Math.floor(Math.random()*new Date())
+    })
 {
     this.nom = nom;
     this.prenom = prenom;
@@ -13,10 +19,10 @@ function user(nom,prenom,Email,id=Math.floor(Math.random()*new Date()))
 
 bouton.addEventListener('submit', (e)=>{
     e.preventDefault();
-    const moi = new user(
-        lastname.value,
-        firstname.value,
-        email.value,
-    )
+    const moi = new user({
+        Email:email.value,
+        nom:lastname.value,
+        prenom:firstname.value,
+    } )
     console.log(moi)
 })
